@@ -1,0 +1,40 @@
+{
+  "name": "onlyplans",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-mon": "nodemon -w . -w .env index.js --ignore node_modules/ ",
+    "start": "node index.js",
+    "setup-mongo-docker": "docker run --name mongodb -d -p 27017:27017 mongo",
+    "start-mongo-docker": "docker start mongodb",
+    "seed": "node scripts/seed/create-users.js && node scripts/seed/create-following.js  && node scripts/seed/create-tiers.js && node scripts/seed/create-posts.js  && node scripts/seed/create-meals.js  && node scripts/seed/create-likes.js && node scripts/seed/create-subscribing.js && node scripts/seed/create-comments.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^7.11.0",
+    "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-fileupload": "^1.5.0",
+    "gm": "^1.25.0",
+    "jsonwebtoken": "^9.0.2",
+    "md5": "^2.3.0",
+    "mongoose": "^8.3.0",
+    "mongoose-to-swagger": "^1.5.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "multer-cloud-storage": "^3.1.0",
+    "nocache": "^4.0.0",
+    "redis": "^4.6.13",
+    "redis-om": "^0.4.3",
+    "request": "^2.88.2",
+    "sharp": "^0.33.4",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  }
+}
